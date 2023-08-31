@@ -4,14 +4,22 @@ namespace UnityTools.Vector2
 {
     public class Vector2List
     {
-        private List<UnityEngine.Vector2> IndexToVector2;
+        private static readonly List<UnityEngine.Vector2> _fourDirection;
 
-        Vector2List()
+        static Vector2List()
         {
-            for (int i = 0; i < 4; i++)
+            _fourDirection = new List<UnityEngine.Vector2>
             {
-                
-            }
+                UnityEngine.Vector2.right,
+                UnityEngine.Vector2.up,
+                UnityEngine.Vector2.left,
+                UnityEngine.Vector2.down
+            };
+        }
+
+        public static List<UnityEngine.Vector2> FourDirection()
+        {
+            return _fourDirection;
         }
     }
 }
